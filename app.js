@@ -3,11 +3,12 @@ const mongoose = require("mongoose");
 const blogs = require("./routes/blogs");
 const admin = require("./routes/admin");
 const user = require("./routes/user");
+const newUser = require("./routes/newUser");
 require("dotenv").config();
 
 const finduser = require('./middleware/finduser');
-const newUser = require("./models/newUser");
-const { signUp } = require("./controllers/newUser");
+
+// const { signUp } = require("./controllers/newUser");
 
 const app = express();
 

@@ -1,7 +1,7 @@
 const newUser = require("../models/newUser");
 
 
-exports.signUp = async (res, req) => {
+exports.signUp = async (req, res) => {
     try {
         const user = await newUser.find({});
         let pname = "Login";
@@ -12,7 +12,8 @@ exports.signUp = async (res, req) => {
             pname
         });
     } catch (e) {
-        res.status(500).send(e);
+        console.log(e);
+        // res.status(500).send(e);
     }
 }
 
@@ -39,16 +40,17 @@ exports.handleSignUp = async (req, res) => {
             await user.save();
             req.session.admin = true;
             res.redirect("/user/login");
-        } else {
-            const truth = await bcrypt.compare(password, user[0].password);
-            if (truth) {
-                req.session.admin = true;
-                res.redirect("/user/login");
-            } else {
-                res.status(400).send("Invalid user or password");
-            }
         }
+        // } else {
+        //     const truth = await bcrypt.compare(password, user[0].password);
+        //     if (truth) {
+        //         req.session.admin = true;
+        //         res.redirect("/user/login");
+        //     } else {
+        //         res.status(400).send("Invalid user or password");
+        //     }
+        // }
     } catch (e) {
-        res.status(500).send(e);
+        console.log(e);
     }
 }
