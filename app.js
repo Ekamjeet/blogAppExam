@@ -6,6 +6,8 @@ const user = require("./routes/user");
 require("dotenv").config();
 
 const finduser = require('./middleware/finduser');
+const newUser = require("./models/newUser");
+const { signUp } = require("./controllers/newUser");
 
 const app = express();
 
@@ -29,6 +31,8 @@ require('./middleware/setup')(app);
 app.use("/blogs", blogs);
 app.use("/admin", admin, admin);
 app.use("/user", user);
+app.use("/newUser",newUser);
+
 
 app.use((_req, res) => {
     res.redirect("/blogs");
