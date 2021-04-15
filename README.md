@@ -1,0 +1,2 @@
+# blogAppExam
+npm start
