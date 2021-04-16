@@ -6,7 +6,7 @@ const user = require("./routes/user");
 const newUser = require("./routes/newUser");
 require("dotenv").config();
 
-const finduser = require('./middleware/finduser');
+// const finduser = require('./middleware/finduser');
 
 // const { signUp } = require("./controllers/newUser");
 

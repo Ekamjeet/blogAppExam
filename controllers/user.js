@@ -1,7 +1,7 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
-exports.login = async (req, res) => {
+exports.login = async (_req, res) => {
     try {
         const useR = await User.find({});
         let pname = "Login";

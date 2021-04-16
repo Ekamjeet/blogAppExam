@@ -1,7 +1,7 @@
 const newUser = require("../models/newUser");
 
 
-exports.signUp = async (req, res) => {
+exports.signUp = async (_req, res) => {
     try {
         const user = await newUser.find({});
         let pname = "Login";
